@@ -66,7 +66,7 @@ const main = async (IPFSPinning) => {
             let filePath = `${outputPath}/${xlData[i].ID}.png`;
             let response = await pinFileToIPFS(pinataApiKey, pinataSecretApiKey, filePath);
             let IPFSHash = response.IpfsHash;
-            xlData[i]["IPFS Hash"] = `${IPFSHash}`;
+            xlData[i]["IPFS Hash"] = `ipfs://${IPFSHash}`;
         }
     }
     if (IPFSPinning) {
